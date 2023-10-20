@@ -187,12 +187,12 @@ Aşağıdakileri yapmak için profilListesi'ni kullanın:
 */
 
 function profilListesi(arr) {
-  
   const copyArr = [...arr];
   
   for(let index in copyArr){
     copyArr[index] = copyArr[index]["profile"];
   }
+  
   return copyArr;
 }
 
@@ -205,11 +205,13 @@ Aşağıdakileri yapmak için fenomenSil'i kullanın:
 5. Ortaya çıkan diziyi döndürün
 
 ÖRNEK: fenomenSil işlevi fenomenler dizisi ve 0 indeks sayısı ile çağrılırsa, veri kümemizden 'Instagram' kaldırılmış olarak döndürür. */
-function fenomenSil(/*kod*/) {
-  /*kod*/
+function fenomenSil(arr , index) {
+  const copyArr = [...arr];
+  
+  copyArr.splice(index,1);
+  
+  return copyArr;
 }
-
-
 
 /* Görev 6:
 Aşağıdakileri yapmak için fenomenEkle'i kullanın:
