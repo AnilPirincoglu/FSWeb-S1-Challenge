@@ -189,8 +189,8 @@ Aşağıdakileri yapmak için profilListesi'ni kullanın:
 function profilListesi(arr) {
   const copyArr = [...arr];
 
-  for (let index in copyArr) {
-    copyArr[index] = copyArr[index]["profile"];
+  for (let i = 0; i < copyArr.length ; i++) {
+    copyArr[i] = copyArr[i]["profile"];
   }
 
   return copyArr;
@@ -256,9 +256,9 @@ function enFenomenler(arr) {
 
   const topFollowersProfiles = [];
 
-  for (let index in arr) {
-    if (arr[index]["followers"] > 100_000_000) {
-      topFollowersProfiles.push(arr[index]["profile"]);
+  for (let element of arr) {
+    if (element["followers"] > 100_000_000) {
+      topFollowersProfiles.push(element["profile"]);
     }
   }
 
@@ -277,9 +277,9 @@ Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
 
 function fenomenGonderimSayisi(arr , nickName) {
   
- for(let index in arr){
-  if(arr[index]["profile"] === nickName){
-    return arr[index]["posts"];
+ for(let element of arr){
+  if(element["profile"] === nickName){
+    return element["posts"];
   }
  }
 }
@@ -298,13 +298,13 @@ Not: Gönderi sayısı belli olmayan (NA) hesaba katmayın.
 
 function platformaGoreCokGonderiYapanFenomen(arr, platformName) {
   
-  let topPosts =0;
-  let nickName;
+  let maxPosts = 0;
+  let nickName;                                                     
 
-  for(let index in arr){
-    if(arr[index]["platform"] == platformName && arr[index]["posts"] > topPosts ){
-      topPosts = arr[index]["posts"];
-      nickName = arr[index]["profile"]
+  for(let element of arr){
+    if(element["platform"] == platformName && element["posts"] > maxPosts ){
+      maxPosts = element["posts"];
+      nickName = element["profile"]
     }
   }
   return nickName;
