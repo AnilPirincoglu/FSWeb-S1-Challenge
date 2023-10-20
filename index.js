@@ -252,8 +252,17 @@ Aşağıdakileri yapmak için enFenomenler'yi kullanın:
 ÖRNEK: enFenomenler(fenomenler) çağrıldığında sonuç olarak ["Instagram", "Cristiano Ronaldo", ... "Khabane lame"] dönemelidir
 */
 
-function enFenomenler(/*kod*/) {
-  /*kod*/
+function enFenomenler(arr) {
+
+  const topFollowersProfiles = [];
+
+  for (let index in arr) {
+    if (arr[index]["followers"] > 100_000_000) {
+      topFollowersProfiles.push(arr[index]["profile"]);
+    }
+  }
+
+  return topFollowersProfiles;
 }
 
 
