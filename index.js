@@ -189,7 +189,7 @@ Aşağıdakileri yapmak için profilListesi'ni kullanın:
 function profilListesi(arr) {
   const copyArr = [...arr];
 
-  for (let i = 0; i < copyArr.length ; i++) {
+  for (let i = 0; i < copyArr.length; i++) {
     copyArr[i] = copyArr[i]["profile"];
   }
 
@@ -275,13 +275,13 @@ Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
 ÖRNEK: fenomenGonderimSayisi(fenomenler, 'Will Smith') çağrıldığında "136" dönmelidir
 */
 
-function fenomenGonderimSayisi(arr , nickName) {
-  
- for(let element of arr){
-  if(element["profile"] === nickName){
-    return element["posts"];
+function fenomenGonderimSayisi(arr, nickName) {
+
+  for (let element of arr) {
+    if (element["profile"] === nickName) {
+      return element["posts"];
+    }
   }
- }
 }
 
 
@@ -297,12 +297,12 @@ Not: Gönderi sayısı belli olmayan (NA) hesaba katmayın.
 */
 
 function platformaGoreCokGonderiYapanFenomen(arr, platformName) {
-  
-  let maxPosts = 0;
-  let nickName;                                                     
 
-  for(let element of arr){
-    if(element["platform"] == platformName && element["posts"] > maxPosts ){
+  let maxPosts = 0;
+  let nickName;
+
+  for (let element of arr) {
+    if (element["platform"] === platformName && element["posts"] > maxPosts) {
       maxPosts = element["posts"];
       nickName = element["profile"]
     }
